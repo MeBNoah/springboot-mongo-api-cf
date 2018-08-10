@@ -1,8 +1,8 @@
 # springboot-mongo-api-cf
-Sample showing REST API implementation using Spring Boot and MongoDB as the backend. 
-This app connects to another service (node_project_service) and is used for training purpose. 
+Sample showing REST API implementation using Spring Boot and MongoDB as persistence mechanism. 
+Note that there is no explicit configuration for connecting to the MongoDB. SpringBoot does some voodoo magic under the hood. When running locally it assumes mongodb runs under localhost using the default port. You could change that by simply adding the following line to the [application.properties](src/main/resources/application.properties): spring.data.mongodb.uri = mongodb://localhost:27017/users
 
-Note: 
+When running on Cloud Foundry, the Auto Reconfiguration of the Java Buildpack while kick in, which recognizes that there is a MongoDB service bound to the application and inject the respective Spring Bean in order to work with the DB.  
 
 ## Run locally
 * `docker pull mongo`
