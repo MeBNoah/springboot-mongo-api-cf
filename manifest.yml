@@ -1,0 +1,7 @@
+---
+applications:
+- name: spring-mongo-api-cf
+  memory: 1G
+  path: target/springboot-mongo-api-cf-0.0.1-SNAPSHOT.jar
+  services:
+  - mongodb
